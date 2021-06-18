@@ -61,9 +61,6 @@ def fibonacci_func(n):
         return fibonacci_func(n - 1) + fibonacci_func(n - 2)
 
 
-print(fibonacci_func(6))
-
-
 # 5. Аналог lru_cache
 # Если в словаре cache есть нужное значени, то мы его не вычисляем,
 # а сразу отдаем в функцию fibonacci_func, если значения нет, то мы его вычисляем
