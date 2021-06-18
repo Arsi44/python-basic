@@ -1,8 +1,11 @@
+from dataclasses import dataclass
+
+
+@dataclass()
 class Vehicle():
-    def __init__(self, vehicle_type, weight, lifting_capacity):
-        self.vehicle_type = vehicle_type
-        self.weight = weight
-        self.lifting_capacity = lifting_capacity
+    vehicle_type: str
+    weight: int
+    lifting_capacity: int
 
     def honking(self):
         print('Honking by', self.vehicle_type)
