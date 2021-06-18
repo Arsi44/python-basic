@@ -1,5 +1,22 @@
-# 1.
+from functools import wraps
+import time
+
+
+# 0.
+# Декоратор для замера времени
+def time_decorator(func):
+    @wraps(func)  # необходимо, чтобы получать верную ссылку (см аргумент true_link).
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        print(time.time() - start_time)
+        return result
+
+    return wrapper
+
+
 # возвращаем список результатов во 2ой степени
+@time_decorator
 def square_func(power, *args) -> list:
     all_results = []
     for arg in args:
@@ -7,17 +24,9 @@ def square_func(power, *args) -> list:
     return all_results
 
 
-x_1 = square_func(3, 2, 3, 4)
-
-
-# # возвращаем генератор
-# def square_func_gen(*args):
-#     return (arg**2 for arg in args)
-# x_2 = square_func_gen(2, 3, 4)
-##################################################
-
 # 2.
 # возвращаем четные/нечетные числа из списка
+@time_decorator
 def get_numbers(nums: list, parity: bool) -> list:
     if parity:
         result_nums = [num for num in nums if num % 2 == 0]
@@ -26,5 +35,8 @@ def get_numbers(nums: list, parity: bool) -> list:
     return result_nums
 
 
-lst_get_numbers = get_numbers([2, 3, 4, 5, 6, 90, 91], parity = False)
-print(lst_get_numbers)
+square_func(1, 3)
+get_numbers([1, 2, 3], parity=True)
+
+true_link = get_numbers
+print(true_link)
