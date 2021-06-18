@@ -1,4 +1,4 @@
-from functools import wraps
+from functools import wraps, lru_cache
 import time
 
 
@@ -34,6 +34,7 @@ def get_numbers(nums: list, parity: bool) -> list:
         result_nums = [num for num in nums if num % 2 != 0]
     return result_nums
 
+
 #########################################################
 
 # 3.
@@ -43,11 +44,13 @@ def show_enter_info_deco(func):
     def wrapper(*args, **kwargs):
         print(args)
         return func(*args, **kwargs)
+
     return wrapper
 
 
 # 4.
 # функция Фибоначчи
+@lru_cache
 @show_enter_info_deco
 def fibonacci_func(n):
     if n == 0:
@@ -60,3 +63,22 @@ def fibonacci_func(n):
 
 print(fibonacci_func(6))
 
+
+# 5. Аналог lru_cache
+# Если в словаре cache есть нужное значени, то мы его не вычисляем,
+# а сразу отдаем в функцию fibonacci_func, если значения нет, то мы его вычисляем
+def lru_cache_analog(func):
+    cache = {}
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        try:
+            return cache[args]
+        except KeyError:
+            pass
+        res = func(*args)
+        cache[args] = res
+        print(cache)
+        return res
+
+    return wrapper
