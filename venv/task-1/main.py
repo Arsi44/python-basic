@@ -5,7 +5,7 @@ import time
 # 0.
 # Декоратор для замера времени
 def time_decorator(func):
-    @wraps(func)  # необходимо, чтобы получать верную ссылку (см аргумент true_link).
+    @wraps(func)  # необходимо, чтобы получать верную ссылку
     def wrapper(*args, **kwargs):
         start_time = time.time()
         result = func(*args, **kwargs)
@@ -15,7 +15,7 @@ def time_decorator(func):
     return wrapper
 
 
-# возвращаем список результатов во 2ой степени
+# возвращаем список результатов во N-ой степени
 @time_decorator
 def square_func(power, *args) -> list:
     all_results = []
@@ -34,9 +34,29 @@ def get_numbers(nums: list, parity: bool) -> list:
         result_nums = [num for num in nums if num % 2 != 0]
     return result_nums
 
+#########################################################
 
-square_func(1, 3)
-get_numbers([1, 2, 3], parity=True)
+# 3.
+# Дерократор, который показывает вложенные входы в функцию
+def show_enter_info_deco(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print(args)
+        return func(*args, **kwargs)
+    return wrapper
 
-true_link = get_numbers
-print(true_link)
+
+# 4.
+# функция Фибоначчи
+@show_enter_info_deco
+def fibonacci_func(n):
+    if n == 0:
+        return 0
+    elif n == 1 or n == 2:
+        return 1
+    else:
+        return fibonacci_func(n - 1) + fibonacci_func(n - 2)
+
+
+print(fibonacci_func(6))
+
