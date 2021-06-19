@@ -1,3 +1,6 @@
+from my_exceptions import NegativeValueException
+
+
 class Dog:
 
     def __init__(self, name, age):
