@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass()
-class Vehicle():
+class Vehicle:
     vehicle_type: str
     weight: int
     lifting_capacity: int
