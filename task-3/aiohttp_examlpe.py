@@ -6,9 +6,10 @@ import asyncio
 # создаём асинхронного клиента
 async def main():
     async with aiohttp.ClientSession() as session:
-        async with session.get('http://httpbin.org/get') as resp:
+        async with session.get('https://jsonplaceholder.typicode.com/users') as resp:
             print(resp.status)
-            print(await resp.text())
+            print(await resp.json())
+            # print(await resp.text())
 
 
 if __name__ == '__main__':
