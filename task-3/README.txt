@@ -7,6 +7,7 @@
 -----------
 - asyncio -
 -----------
+
 asyncio.gather() - запускает все задачи одновременно, но предоставляет мало контроля над задачами
 asyncio.shield() - защищает такс от отмены
 asyncio.wait_for() - ждем таймаута на выполнение задачи или же вызываем исключение (комбинируется с функцией shield())
@@ -22,3 +23,9 @@ to_thread() - для задач  IO-bound, но в некоторых пакет
 run_coroutine_threadsafe(coro, loop) - практически тоже самое, что и to_thread(), НО, указывается конкретный луп для обработки
 
 asyncio.create_task() и loop.create_task() - это разные вещи
+
+--------------
+- SqlAlchemy -
+--------------
+Определение Метадаты:
+https://docs.sqlalchemy.org/en/14/glossary.html#term-table-metadata

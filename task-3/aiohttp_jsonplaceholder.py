@@ -16,8 +16,6 @@ async def create_task(link):
 
 
 # ожидание завершения всех карутины (asyncio.wait)
-# !! If any awaitable in aws is a coroutine, it is automatically scheduled as a Task
-# - сопрограммы автоматически преобразуются в таски !!
 async def main():
     done, pending = await asyncio.wait(
     [create_task(link) for link in links]
@@ -34,6 +32,3 @@ if __name__ == '__main__':
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
 
-
-# различия asyncio.wait и asyncio.gather:
-# https://stackoverflow.com/questions/42231161/asyncio-gather-vs-asyncio-wait
