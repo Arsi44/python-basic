@@ -4,14 +4,13 @@ import asyncpg
 from dotenv import dotenv_values
 
 config_dotenv = dotenv_values(".env")
-print(config_dotenv.keys())
 
 
 async def run():
     conn = await asyncpg.connect(
         user=config_dotenv["pg_user"],
         password=config_dotenv["pg_pwd"],
-        database='test_db',
+        database='new_db',
         host='127.0.0.1',
         port="5432"
     )

@@ -2,8 +2,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import ForeignKey
-from sqlalchemy.orm import relationship
 
 # engine = create_engine('sqlite:///:memory:', echo=True)
 # движок, на котором все пишется
