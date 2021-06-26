@@ -2,6 +2,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import ForeignKey
+from sqlalchemy.orm import relationship
 
 # engine = create_engine('sqlite:///:memory:', echo=True)
 # движок, на котором все пишется
@@ -48,6 +50,11 @@ my_session.add_all([
 print(my_session.dirty)
 # pending objects
 print(my_session.new)
+
+# query example
+# for instance in my_session.query(User).order_by(User.id):
+#     print(instance.name, instance.fullname)
+
 
 # commit the transaction
 # my_session.commit()

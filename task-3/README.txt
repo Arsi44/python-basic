@@ -27,5 +27,11 @@ asyncio.create_task() и loop.create_task() - это разные вещи
 --------------
 - SqlAlchemy -
 --------------
+Быстрый старт:
+https://docs.sqlalchemy.org/en/14/orm/tutorial.html
+Построение запросов:
+https://docs.sqlalchemy.org/en/14/orm/queryguide.html
 Определение Метадаты:
 https://docs.sqlalchemy.org/en/14/glossary.html#term-table-metadata
+Построение отношений:
+https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html#relationship-patterns
