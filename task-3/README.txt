@@ -35,3 +35,11 @@ https://docs.sqlalchemy.org/en/14/orm/queryguide.html
 https://docs.sqlalchemy.org/en/14/glossary.html#term-table-metadata
 Построение отношений:
 https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html#relationship-patterns
+
+--------
+- Gino -
+--------
+Быстрый страрт
+https://python-gino.org/docs/en/1.0/tutorials/tutorial.html
+Для осуществления поиска (first,scalar и тд)
+https://python-gino.org/docs/en/1.0/reference/api/gino.engine.html#gino.engine.GinoConnection.scalar
