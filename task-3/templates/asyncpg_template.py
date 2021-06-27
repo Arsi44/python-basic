@@ -10,7 +10,7 @@ async def run():
     conn = await asyncpg.connect(
         user=config_dotenv["pg_user"],
         password=config_dotenv["pg_pwd"],
-        database='new_db',
+        database='example',
         host='127.0.0.1',
         port="5432"
     )
