@@ -43,3 +43,6 @@ https://docs.sqlalchemy.org/en/14/orm/basic_relationships.html#relationship-patt
 https://python-gino.org/docs/en/1.0/tutorials/tutorial.html
 Для осуществления поиска (first,scalar и тд)
 https://python-gino.org/docs/en/1.0/reference/api/gino.engine.html#gino.engine.GinoConnection.scalar
+Полезные ссылки:
+https://ru.wikibooks.org/wiki/SQLAlchemy
+https://lectureswww.readthedocs.io/6.www.sync/2.codding/9.databases/2.sqlalchemy/1.metadata.html
