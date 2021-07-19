@@ -1,4 +1,5 @@
-from unittest.mock import MagicMock, Mock, patch, create_autospec
+# https://docs.python.org/3/library/unittest.mock.html#where-to-patch
+from unittest.mock import MagicMock, Mock, patch, create_autospec, NonCallableMock
 
 
 class ProductionClass:
@@ -64,4 +65,7 @@ mock_function(1, 2, 3)  # 'fishy'
 mock_function.assert_called_once_with(1, 2, 3)
 mock_function('wrong arguments')  # Error
 
-
+# Объект класса NonCallableMock НЕВЫЗЫВАЕМЫЙ
+thing = ProductionClass()
+# устанавливаем метод и полученное из него значение
+thing.method = MagicMock(return_value=3)  # Вызов этого значения: thing.method.return_value
